@@ -47,7 +47,9 @@ const Login = styled.button`
 `;
 
 
+
 function LoginPage() {
+    const history = useHistory();
     const clickme = () => {
         alert("Insert your information!")
         console.log(user);
@@ -63,6 +65,15 @@ function LoginPage() {
             [name]:value,
         });
     };
+    const {id,password} = user;
+    const navigateToMainPage = () => {
+        if(user.id == "c1ndy13" && user.password == "zanahoria3"){
+            history.push("/main");
+        }
+        else{
+            alert("insert your ID and password");
+        }
+    }
     return (<Container>
         <LeftSide></LeftSide>
         <RightSide>
@@ -75,7 +86,7 @@ function LoginPage() {
         <Label>Password</Label>
         <Inputfield type = "password" value = {user.password} name = "password" onChange = {putUserInfo} placeholder = "Insert your Password"></Inputfield>
         </div>
-        <Login onClick = {clickme}>Login</Login>
+        <Login onClick = {navigateToMainPage}>Login</Login>
         </RightSide>
     </Container>)
 }
