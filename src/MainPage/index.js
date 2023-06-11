@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import Me from "./me.jpeg";
 import W1 from "./instagram.png";
 import W2 from "./github.png";
 import W3 from "./owl.png";
 import W4 from "./news.png";
-import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
     height: 100vh;
@@ -51,15 +51,18 @@ const LearnMore = styled.button`
     color: #4C8C43;
     background-color: #ded1c8;
     width: 200px;
-
-
 `;
 
+
 function MainPage(){
+    const history = useHistory();
+const navigateToLearnMorePage = () => {
+    history.push("/learn");
+}
     return(<Container>
         <DescriptionContainer>
             <WelcomeTitle> Hello, I am Cindy! </WelcomeTitle>
-            <Skill>python | c++ | arima</Skill>
+            <Skill> Python | C++ | ARIMA </Skill>
             <div>
                 <a href = "https://www.instagram.com/c1ndy1_03/?next=%2F" target="_blank">
                     <Webs src={W1}/> </a>
@@ -70,7 +73,8 @@ function MainPage(){
                 <a href = "http://www.heraldinsight.co.kr/news/articleList.html?sc_area=A&view_type=sm&sc_word=Boyoung" target="_blank">
                 <Webs src={W4}/> </a>
             </div>
-            <LearnMore>Learn More</LearnMore>
+            <LearnMore onClick = {navigateToLearnMorePage}>Learn More</LearnMore>
+            
         </DescriptionContainer>
         <Photo src={Me}/>
     </Container>)
