@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import {ProgressBar, Button} from "react-bootstrap";
 import Me2 from "./me2.png";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./style.css";
 
 const Container = styled.div`
     height: 100%;
@@ -37,12 +39,13 @@ const EducationContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 50px;
 `;
 const Photo = styled.img`
     margin: auto;
-    height: 50vh;
-    padding: 200px;
-    padding-left: 20px;
+    height: 500px;
+    padding-left: 300px;
+    margin-top: 150px;
 `;
 const Title = styled.h1`
     color: #ffab8f;
@@ -55,7 +58,7 @@ const Title2 = styled.h1`
     text-align: center;
     font-family: cursive;
     font-size: 50px;
-
+    margin-bottom: 20px;
 `;
 const Intro = styled.h4`
     color: #443d54;
@@ -74,6 +77,11 @@ const EducationLabel = styled.div`
 
 
 function LearnMorePage() {
+    const barStyle = {
+        width: "300px",
+        backgroundColor: "#d6ffd7",
+        height: "30px",
+    };
     return(<Container>
         <AboutMeContainer>
             <LeftSide>
@@ -96,14 +104,16 @@ function LearnMorePage() {
             <EducationRowContainer>
                 <EducationLabel> A </EducationLabel>
                 <ProgressBar
+                style = {barStyle}
                 label = {'4.8/5.0'}
                 max = {5.0}
                 min = {0}
-                now={5}/>
+                now={4.8}/>
                 </EducationRowContainer>
                 <EducationRowContainer>
                 <EducationLabel>B</EducationLabel>
                 <ProgressBar
+                style = {barStyle}
                 label = {'5/5'}
                 max = {5}
                 min = {0}
@@ -112,6 +122,7 @@ function LearnMorePage() {
                 <EducationRowContainer>
                 <EducationLabel>C</EducationLabel>
                 <ProgressBar
+                style = {barStyle}
                 label = {'5/5'}
                 max = {5}
                 min = {0}
@@ -120,6 +131,7 @@ function LearnMorePage() {
                 <EducationRowContainer>
                 <EducationLabel>D</EducationLabel>
                 <ProgressBar
+                style = {barStyle}
                 label = {'5/5'}
                 max = {5}
                 min = {0}

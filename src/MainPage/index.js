@@ -56,9 +56,9 @@ const LearnMore = styled.button`
 
 function MainPage(){
     const history = useHistory();
-const navigateToLearnMorePage = () => {
+    const navigateToLearnMorePage = () => {
     history.push("/learn");
-}
+    }
     return(<Container>
         <DescriptionContainer>
             <WelcomeTitle> Hello, I am Cindy! </WelcomeTitle>
